@@ -1,0 +1,185 @@
+/* src/components/Homepage.css */
+
+.homepage { /* Matched with div className="homepage" in JSX */
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh; /* Ensure it takes full viewport height for proper layout */
+  display: flex;
+  flex-direction: column;
+}
+
+/* No .header class needed if .navbar is directly on the <header> tag */
+/* .header {
+  width: 100%;
+} */
+
+.navbar {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Ensure navbar spans full width up to max-width */
+}
+
+/* This class wasn't used in the provided JSX, consider removing if not needed */
+/* .nav-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+} */
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #5c4033; /* Brown */
+  text-decoration: none; /* Important for Link component */
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  font-weight: 500;
+  color: #5c4033;
+  margin: 0; /* Remove default ul margin */
+  padding: 0; /* Remove default ul padding */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit; /* Links will inherit color from .nav-links */
+  transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+.nav-links a:hover {
+  color: #f6a5c0; /* Hover effect for nav links */
+}
+
+.nav-icons {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 18px;
+  color: #5c4033;
+  align-items: center; /* Align icons and buttons vertically */
+}
+
+.icon {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #f6a5c0; /* Hover effect for icons */
+}
+
+.auth-buttons { /* This class is now used in JSX */
+  display: flex;
+  gap: 1rem;
+  /* Removed padding and margin-bottom as it was likely a leftover from an older structure */
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none; /* For button wrapped in Link */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login {
+  background-color: #f8c4dc; /* Light pink */
+  color: #5c4033; /* Brown text */
+}
+
+.login:hover {
+  background-color: #f6a5c0; /* Slightly darker pink */
+}
+
+.register {
+  background-color: #f6a5c0; /* Darker pink */
+  color: white;
+}
+
+.register:hover {
+  background-color: #f8c4dc; /* Slightly lighter pink */
+}
+
+/* Changed .hero to .main-section to match JSX */
+.main-section {
+  flex-grow: 1; /* Allows main content to take available space */
+  display: flex;
+  flex-direction: column;
+  background-color: #fff0f5;
+  padding: 40px 20px;
+  align-items: center; /* Center content horizontally in column layout */
+  justify-content: center; /* Center content vertically */
+  text-align: center; /* Center text for mobile */
+}
+
+@media (min-width: 768px) {
+  .main-section { /* Changed from .hero */
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 60px 80px;
+    text-align: left; /* Align text left for desktop */
+  }
+}
+
+/* Changed .hero-text to .content-container to match JSX */
+.content-container {
+  max-width: 600px;
+  margin-bottom: 40px; /* Space below text for mobile */
+}
+
+@media (min-width: 768px) {
+  .content-container {
+    margin-bottom: 0; /* Remove margin for row layout */
+  }
+}
+
+
+.content-container h1 { /* Changed from .hero-text h1 */
+  font-size: 36px;
+  color: #3e2723;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.content-container p { /* Changed from .hero-text p */
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.order-btn {
+  background-color: #ffe1e1;
+  color: #5c4033; /* Changed text color to brown for better contrast */
+  padding: 12px 24px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block; /* Essential for padding to work on Link */
+}
+
+.order-btn:hover {
+  background-color: #f6a5c0; /* Hover to a darker pink */
+  color: white; /* White text on hover */
+}
+
+/* Changed .hero-image img to .image-container img to match JSX */
+.image-container img {
+  max-width: 100%; /* Ensure image scales within its container */
+  width: 300px;
+  height: auto;
+  object-fit: contain; /* Ensure image fits without cropping */
+}
+
+@media (min-width: 768px) {
+  .image-container img {
+    width: 500px;
+  }
+}
